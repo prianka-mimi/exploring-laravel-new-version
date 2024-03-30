@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\PatientsController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -16,5 +17,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::get('patients', [PatientsController::class, 'index'])->name('patients');
+Route::post('patients/add', [PatientsController::class, 'store'])->name('patients-add');
 
 require __DIR__.'/auth.php';

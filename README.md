@@ -6,6 +6,24 @@
 
 [Fatema Akther Prianka 🤗](https://github.com/Prianka-Mimi)
 
+## Features
+
+- Add patients data through Modal
+
+## View In Short
+
+**Welcome Page Dashboard**
+
+<img  src="public/contents/ss/dashboard.png"  alt="Laravel 11 New Version">
+
+**Add Patients Modal**
+
+<img  src="public/contents/ss/add_patients_modal.png"  alt="Laravel 11 New Version">
+
+**All Patients**
+
+<img  src="public/contents/ss/all_patients.png"  alt="Laravel 11 New Version">
+
 ## Contact
 
 [🌐 Fatema Akther Prianka](https://webdeveloperprianka.netlify.app/)

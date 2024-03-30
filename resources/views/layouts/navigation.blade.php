@@ -16,7 +16,7 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="url('/')">
+                    <x-nav-link :href="route('patients')" :active="request()->routeIs('patients')">
                         {{ __('Patients') }}
                     </x-nav-link>
 

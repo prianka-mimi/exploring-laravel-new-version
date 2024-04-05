@@ -1,6 +1,6 @@
 # Exploring laravel 11 New Version !
 
-**Exploring laravel 11 New Version** with basic **CRUD**
+**Exploring laravel 11 New Version** with basic **CRUD In Modal**.It's a simple short project about **Hospital Management** With Breeze.
 
 ## Author
 
@@ -8,7 +8,7 @@
 
 ## Features
 
-- Add patients data through Modal
+- Add | View | Edit | Delete - patients data through Modal
 
 ## View In Short
 

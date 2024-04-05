@@ -34,7 +34,7 @@ class PatientsController extends Controller
         Patients::insert([
             'patient_name' => $request->name,
             'patient_email' => $request->email,
-            'patient_dob' => $request->date_fo_birth,
+            'patient_dob' => $request->date_of_birth,
             'patient_gender' => $request->gender,
             'patient_department' => $request->department,
             'patient_blood_group' => $request->blood_group,

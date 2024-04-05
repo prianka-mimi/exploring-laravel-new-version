@@ -40,7 +40,18 @@
                                 <tr>
                                     <th scope="row">{{ $loop->iteration }}</th>
                                     <td>{{ $patient->patient_name }}</td>
-                                    <td>{{ $patient->patient_dob }}</td>
+                                    <td>
+                                        {{-- Calculate age --}}
+                                        @php
+                                            $dob = new DateTime($patient->date_of_birth);
+                                            $now = new DateTime($patient->patient_dob);
+                                            $age = $dob->diff($now)->y;
+                                        @endphp
+
+                                        {{-- Output age --}}
+                                        {{ $age }} years
+                                    </td>
+
                                     <td>{{ $patient->patient_gender }}</td>
                                     <td>{{ $patient->patient_department }}</td>
                                     <td>{{ $patient->patient_email }}</td>

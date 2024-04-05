@@ -22,7 +22,6 @@ return new class extends Migration
             $table->string('patient_address')->nullable();
             $table->string('patient_image')->nullable();
             $table->timestamps();
-            $table->timestamp('deleted_at')->nullable();
         });
     }
 

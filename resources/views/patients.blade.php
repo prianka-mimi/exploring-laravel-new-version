@@ -1,8 +1,8 @@
 <x-app-layout>
     <x-slot name="header">
         <style>
-            .custom_height{
-                padding: 16px 0!important;
+            .custom_height {
+                padding: 16px 0 !important;
             }
         </style>
         <div class="row">
@@ -57,8 +57,13 @@
                                     <td>{{ $patient->patient_email }}</td>
                                     <td>
                                         <ul class="d-flex justify-content-center align-items-center">
-                                            <li class="btn btn-secondary mx-2"><a href="#"><i
-                                                        class="fa-solid fa-eye"></i></a></li>
+                                            <x-custom-view-modal>
+                                                <li class="btn btn-secondary mx-2" data-bs-toggle="modal"
+                                                    data-bs-target="#viewModal{{ $patient->patient_id }}">
+                                                    <i class="fa-solid fa-eye"></i>
+                                                </li>
+                                            </x-custom-view-modal>
+
                                             <li class="btn btn-success mx-2"><a href="#"><i
                                                         class="fa-solid fa-user-pen"></i></a></li>
                                             <li class="btn btn-danger mx-2"><a href="#"><i
@@ -68,6 +73,10 @@
                                 </tr>
                             @endforeach
                     </table>
+
+                    {{-- pagination part start --}}
+                    {{$patients->links() }}
+                    {{-- pagination part end --}}
                 </div>
             </div>
         </div>

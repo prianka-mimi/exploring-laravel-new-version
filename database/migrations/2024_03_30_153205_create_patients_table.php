@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('patient_blood_group')->nullable();
             $table->string('patient_address')->nullable();
             $table->string('patient_image')->nullable();
+            $table->string('patient_creator')->nullable();
             $table->timestamps();
         });
     }

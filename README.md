@@ -1,6 +1,6 @@
-# Exploring laravel 11 New Version !
+# Hospital Management with basic CRUD In Modal !
 
-**Exploring laravel 11 New Version** with basic **CRUD In Modal**.It's a simple short project about **Hospital Management** With Breeze.
+**Exploring laravel 11 New Version** with basic **CRUD In Modal**. It's a simple short project about **Hospital Management** With Breeze.
 
 ## Author
 
@@ -9,6 +9,12 @@
 ## Features
 
 - Add | View | Edit | Delete - patients data through Modal
+
+- Insert & store image without package
+
+- Uses of Seeder for default login
+
+- Uses of Breeze for authentication
 
 ## View In Short
 
@@ -23,6 +29,10 @@
 **All Patients**
 
 <img  src="public/contents/ss/all_patients.png"  alt="Laravel 11 New Version">
+
+**View Patients**
+
+<img  src="public/contents/ss/view_patients_modal.png"  alt="Laravel 11 New Version">
 
 ## Contact
 

@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use App\Models\Patients;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class PatientsController extends Controller
 {
@@ -14,7 +15,8 @@ class PatientsController extends Controller
      */
     public function index()
     {
-        $patients=Patients::orderBy('patient_id','DESC')->get();
+        $patients = Patients::orderBy('patient_id', 'DESC')->paginate(5);
+        // dd($patients);
         return view('patients', compact('patients'));
     }
 
@@ -31,7 +33,9 @@ class PatientsController extends Controller
      */
     public function store(Request $request)
     {
-        Patients::insert([
+        $patient_creator = Auth::User()->name;
+
+        $insert=Patients::insertGetId([
             'patient_name' => $request->name,
             'patient_email' => $request->email,
             'patient_dob' => $request->date_of_birth,
@@ -39,8 +43,21 @@ class PatientsController extends Controller
             'patient_department' => $request->department,
             'patient_blood_group' => $request->blood_group,
             'patient_address' => $request->address,
+            // 'patient_image' => $imageName,
+            // 'patient_creator' => auth()->user()->name,
+            'patient_creator' => $patient_creator,
             'created_at' => Carbon::now()->toDateTimeString(),
         ]);
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '-' . uniqid() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('uploads/patient'), $imageName);
+
+            Patients::where('patient_id', $insert)->update([
+                'patient_image' => $imageName,
+            ]);
+        }
 
         // return view('patients');
         // return redirect()->back();

@@ -21,6 +21,7 @@
         @endif
 
         {{-- custom link part start --}}
+        <link rel="icon" href="{{asset('contents/website/images/logo-dark.png')}}">
         <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
     <link rel="stylesheet" href="{{asset('contents/website')}}/css/open-iconic-bootstrap.min.css">

@@ -5,7 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        {{-- <title>{{ config('app.name', 'Laravel') }}</title> --}}
+        <title>Mediplus</title>
+        <link rel="icon" href="{{asset('contents/website/images/logo-dark.png')}}">
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -13,9 +15,25 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+        {{-- custom style part start --}}
+        <style>
+            .custom_bg{
+                background: url('{{asset('contents/website/images/bg_3.jpg')}}');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+
+            .custom_bg_overlay{
+                padding: 5rem 0;
+                /* background: rgba(1,1,1,0.7); */
+            }
+        </style>
+        {{-- custom style part end --}}
     </head>
-    <body class="font-sans text-gray-900 antialiased">
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
+    <body class="font-sans text-gray-900 antialiased custom_bg">
+        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 custom_bg_overlay">
             <div>
                 <a href="/">
                     <x-application-logo class="w-20 h-20 fill-current text-gray-500" />

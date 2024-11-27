@@ -15,6 +15,10 @@
 
 <img  src="public/ss/website/home.png"  alt="Hospital Management">
 
+**Dashboard**
+
+<img  src="public/ss/admin/dashboard.png"  alt="Hospital Management">
+
 ## Contact
 
 [🌐 Fatema Akther Prianka](https://webdeveloperprianka.netlify.app/)

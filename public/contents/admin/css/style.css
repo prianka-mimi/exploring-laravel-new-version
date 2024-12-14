@@ -107,6 +107,9 @@ a:focus {
 	color: #009ce7;
 	outline: none;
 }
+ul,ol{
+    list-style: none;
+}
 .form-control {
 	border-radius: 0;
 	box-shadow: none;

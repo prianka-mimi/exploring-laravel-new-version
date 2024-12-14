@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4fc72d4b4e9a9d5911e8e9079824b938",
+    "content-hash": "535b8e81ca812aa80d05c4551a554114",
     "packages": [
         {
             "name": "brick/math",
@@ -2330,6 +2330,349 @@
                 }
             ],
             "time": "2024-11-21T10:39:51+00:00"
+        },
+        {
+            "name": "php-flasher/flasher",
+            "version": "v2.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-flasher/flasher.git",
+                "reference": "edf57294f0511a4f2e185a70b369b7d3bdb0f806"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-flasher/flasher/zipball/edf57294f0511a4f2e185a70b369b7d3bdb0f806",
+                "reference": "edf57294f0511a4f2e185a70b369b7d3bdb0f806",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.2"
+            },
+            "type": "library",
+            "extra": {
+                "phpstan": {
+                    "includes": [
+                        "extension.neon"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "functions.php",
+                    "helpers.php"
+                ],
+                "psr-4": {
+                    "Flasher\\Prime\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Younes ENNAJI",
+                    "email": "younes.ennaji.pro@gmail.com",
+                    "homepage": "https://www.linkedin.com/in/younes--ennaji/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "The foundational PHP library for PHPFlasher, enabling the creation of framework-agnostic flash notifications. Ideal for building custom integrations or for use in PHP projects.",
+            "homepage": "https://php-flasher.io",
+            "keywords": [
+                "custom-integrations",
+                "flash-notifications",
+                "flasher-core",
+                "framework-agnostic",
+                "open-source",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/php-flasher/php-flasher/issues",
+                "source": "https://github.com/php-flasher/php-flasher"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.com/paypalme/yoeunes",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/yoeunes",
+                    "type": "github"
+                },
+                {
+                    "url": "https://ko-fi.com/yoeunes",
+                    "type": "ko_fi"
+                },
+                {
+                    "url": "https://opencollective.com/php-flasher",
+                    "type": "open_collective"
+                },
+                {
+                    "url": "https://www.patreon.com/yoeunes",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2024-10-20T14:11:19+00:00"
+        },
+        {
+            "name": "php-flasher/flasher-laravel",
+            "version": "v2.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-flasher/flasher-laravel.git",
+                "reference": "8cfe006ded9064bb4457126451ad2bfe57f8f8cd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-flasher/flasher-laravel/zipball/8cfe006ded9064bb4457126451ad2bfe57f8f8cd",
+                "reference": "8cfe006ded9064bb4457126451ad2bfe57f8f8cd",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^11.0",
+                "php": ">=8.2",
+                "php-flasher/flasher": "^2.1.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "Flasher": "Flasher\\Laravel\\Facade\\Flasher"
+                    },
+                    "providers": [
+                        "Flasher\\Laravel\\FlasherServiceProvider"
+                    ]
+                },
+                "phpstan": {
+                    "includes": [
+                        "extension.neon"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Flasher\\Laravel\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Younes ENNAJI",
+                    "email": "younes.ennaji.pro@gmail.com",
+                    "homepage": "https://www.linkedin.com/in/younes--ennaji/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Seamlessly integrate flash notifications into your Laravel applications with PHPFlasher. Enhance user feedback and engagement with minimal setup.",
+            "homepage": "https://php-flasher.io",
+            "keywords": [
+                "flash-notifications",
+                "laravel",
+                "open-source",
+                "php",
+                "phpflasher",
+                "user-feedback"
+            ],
+            "support": {
+                "issues": "https://github.com/php-flasher/php-flasher/issues",
+                "source": "https://github.com/php-flasher/php-flasher"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.com/paypalme/yoeunes",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/yoeunes",
+                    "type": "github"
+                },
+                {
+                    "url": "https://ko-fi.com/yoeunes",
+                    "type": "ko_fi"
+                },
+                {
+                    "url": "https://opencollective.com/php-flasher",
+                    "type": "open_collective"
+                },
+                {
+                    "url": "https://www.patreon.com/yoeunes",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2024-10-20T14:11:19+00:00"
+        },
+        {
+            "name": "php-flasher/flasher-notyf",
+            "version": "v2.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-flasher/flasher-notyf.git",
+                "reference": "bdd0883a5497ae8427d4ba271cb4e63cd46c7e98"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-flasher/flasher-notyf/zipball/bdd0883a5497ae8427d4ba271cb4e63cd46c7e98",
+                "reference": "bdd0883a5497ae8427d4ba271cb4e63cd46c7e98",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.2",
+                "php-flasher/flasher": "^2.1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "functions.php",
+                    "helpers.php"
+                ],
+                "psr-4": {
+                    "Flasher\\Notyf\\Prime\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Younes ENNAJI",
+                    "email": "younes.ennaji.pro@gmail.com",
+                    "homepage": "https://www.linkedin.com/in/younes--ennaji/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHPFlasher - A powerful & easy-to-use package for adding flash messages to Laravel or Symfony projects. Provides feedback to users, improves engagement & enhances user experience. Intuitive design for beginners & experienced developers. A reliable, flexible solution.",
+            "homepage": "https://php-flasher.io",
+            "keywords": [
+                "customizable-alerts-php",
+                "flash-messages",
+                "interactive-web-notifications",
+                "laravel-notification",
+                "php-messaging-library",
+                "php-notification-system",
+                "php-user-interface",
+                "symfony-notification",
+                "user-engagement-php",
+                "user-feedback-tools",
+                "web-application-notifications"
+            ],
+            "support": {
+                "issues": "https://github.com/php-flasher/php-flasher/issues",
+                "source": "https://github.com/php-flasher/php-flasher"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.com/paypalme/yoeunes",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/yoeunes",
+                    "type": "github"
+                },
+                {
+                    "url": "https://ko-fi.com/yoeunes",
+                    "type": "ko_fi"
+                },
+                {
+                    "url": "https://opencollective.com/php-flasher",
+                    "type": "open_collective"
+                },
+                {
+                    "url": "https://www.patreon.com/yoeunes",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2024-10-20T14:11:19+00:00"
+        },
+        {
+            "name": "php-flasher/flasher-notyf-laravel",
+            "version": "v2.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-flasher/flasher-notyf-laravel.git",
+                "reference": "fc15505b33e5b8ae9568c29574c32b0e53864b7c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-flasher/flasher-notyf-laravel/zipball/fc15505b33e5b8ae9568c29574c32b0e53864b7c",
+                "reference": "fc15505b33e5b8ae9568c29574c32b0e53864b7c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.2",
+                "php-flasher/flasher-laravel": "^2.1.1",
+                "php-flasher/flasher-notyf": "^2.1.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "Notyf": "Flasher\\Notyf\\Laravel\\Facade\\Notyf"
+                    },
+                    "providers": [
+                        "Flasher\\Notyf\\Laravel\\FlasherNotyfServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Flasher\\Notyf\\Laravel\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Younes ENNAJI",
+                    "email": "younes.ennaji.pro@gmail.com",
+                    "homepage": "https://www.linkedin.com/in/younes--ennaji/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Integrate Notyf's minimalist flash notifications with Laravel via PHPFlasher. Enhance your Laravel apps with sleek, concise user notifications.",
+            "homepage": "https://php-flasher.io",
+            "keywords": [
+                "flash-notifications",
+                "laravel",
+                "minimalist-notifications",
+                "notyf",
+                "open-source",
+                "phpflasher",
+                "user-feedback"
+            ],
+            "support": {
+                "issues": "https://github.com/php-flasher/php-flasher/issues",
+                "source": "https://github.com/php-flasher/php-flasher"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.com/paypalme/yoeunes",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/yoeunes",
+                    "type": "github"
+                },
+                {
+                    "url": "https://ko-fi.com/yoeunes",
+                    "type": "ko_fi"
+                },
+                {
+                    "url": "https://opencollective.com/php-flasher",
+                    "type": "open_collective"
+                },
+                {
+                    "url": "https://www.patreon.com/yoeunes",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2024-10-20T14:11:19+00:00"
         },
         {
             "name": "phpoption/phpoption",

@@ -24,77 +24,67 @@
         <div class="content">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 d-flex justify-content-between align-items-center">
-                    <h4 class="page-title">Add Patient</h4>
-                    <a href="{{ route('patients') }}" class="btn btn btn-primary btn-rounded float-right m-b-20"><i
+                    <h4 class="page-title">Add User</h4>
+                    <a href="{{ route('user') }}" class="btn btn btn-primary btn-rounded float-right m-b-20"><i
                             class="fa fa-arrow-left"></i> Back</a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
-                    <form action="{{ route('patients-store') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('user-store') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
-                            <div class="col-sm-6">
+                            <div class="col-sm-12">
                                 <div class="form-group">
-                                    <label>First Name <span class="text-danger">*</span></label>
-                                    <input class="form-control" type="text" name="patient_first_name"
-                                        value="{{ old('patient_first_name') }}">
+                                    <label>Name <span class="text-danger">*</span></label>
+                                    <input class="form-control" type="text" name="name"
+                                        value="{{ old('name') }}">
                                 </div>
-                                @error('patient_first_name')
-                                    <div class="error">{{ $message }}</div>
-                                @enderror
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label>Last Name</label>
-                                    <input class="form-control" type="text" name="patient_last_name"
-                                        value="{{ old('patient_last_name') }}">
-                                </div>
-                                @error('patient_last_name')
+                                @error('name')
                                     <div class="error">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label>Username <span class="text-danger">*</span></label>
-                                    <input class="form-control" type="text" name="patient_username"
-                                        value="{{ old('patient_username') }}">
+                                    <input class="form-control" type="text" name="username"
+                                        value="{{ old('username') }}">
                                 </div>
-                                @error('patient_username')
+                                @error('username')
                                     <div class="error">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label>Email <span class="text-danger">*</span></label>
-                                    <input class="form-control" type="email" name="patient_email"
-                                        value="{{ old('patient_email') }}">
+                                    <input class="form-control" type="email" name="email"
+                                        value="{{ old('email') }}">
                                 </div>
-                                @error('patient_email')
+                                @error('email')
                                     <div class="error">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group position-relative">
                                     <label>Password <span class="text-danger">*</span></label>
-                                    <input class="form-control" type="password" name="patient_password"
-                                        value="{{ old('patient_password') }}" id="custom_password1">
+                                    <input class="form-control" type="password" name="password"
+                                        value="{{ old('password') }}" id="custom_password1">
                                     <i class="fa fa-eye position-absolute"
                                         style="top: 60%; right: 5%; cursor:pointer;" onclick="togglePassword1()"></i>
                                 </div>
-                                @error('patient_password')
+                                @error('password')
                                     <div class="error">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group position-relative">
                                     <label>Confirm Password <span class="text-danger">*</span></label>
-                                    <input class="form-control" type="password" name="patient_confirm_password"
-                                        value="{{ old('patient_confirm_password') }}" id="custom_password2">
+                                    <input class="form-control" type="password" name="confirm_password"
+                                        value="{{ old('confirm_password') }}" id="custom_password2">
                                     <i class="fa fa-eye position-absolute"
                                         style="top: 60%; right: 5%; cursor:pointer;" onclick="togglePassword2()"></i>
                                 </div>
-                                @error('patient_confirm_password')
+                                @error('confirm_password')
                                     <div class="error">{{ $message }}</div>
                                 @enderror
                             </div>
@@ -103,10 +93,10 @@
                                     <label>Date of Birth <span class="text-danger">*</span></label>
                                     <div class="cal-icon">
                                         <input type="text" class="form-control datetimepicker" placeholder="Day/Month/Year"
-                                            name="patient_date_of_birth" value="{{ old('patient_date_of_birth') }}">
+                                            name="date_of_birth" value="{{ old('date_of_birth') }}">
                                     </div>
                                 </div>
-                                @error('patient_date_of_birth')
+                                @error('date_of_birth')
                                     <div class="error">{{ $message }}</div>
                                 @enderror
                             </div>
@@ -115,27 +105,27 @@
                                     <label class="gen-label">Gender <span class="text-danger">*</span></label>
                                     <div class="form-check-inline">
                                         <label class="form-check-label">
-                                            <input type="radio" name="patient_gender" value="Male"
+                                            <input type="radio" name="gender" value="Male"
                                                 class="form-check-input"
-                                                {{ old('patient_gender') == 'Male' ? 'checked' : '' }}>Male
+                                                {{ old('gender') == 'Male' ? 'checked' : '' }}>Male
                                         </label>
                                     </div>
                                     <div class="form-check-inline">
                                         <label class="form-check-label">
-                                            <input type="radio" name="patient_gender" value="Female"
+                                            <input type="radio" name="gender" value="Female"
                                                 class="form-check-input"
-                                                {{ old('patient_gender') == 'Female' ? 'checked' : '' }}>Female
+                                                {{ old('gender') == 'Female' ? 'checked' : '' }}>Female
                                         </label>
                                     </div>
                                     <div class="form-check-inline">
                                         <label class="form-check-label">
-                                            <input type="radio" name="patient_gender" value="Others"
+                                            <input type="radio" name="gender" value="Others"
                                                 class="form-check-input"
-                                                {{ old('patient_gender') == 'Others' ? 'checked' : '' }}>Others
+                                                {{ old('gender') == 'Others' ? 'checked' : '' }}>Others
                                         </label>
                                     </div>
                                 </div>
-                                @error('patient_gender')
+                                @error('gender')
                                     <div class="error">{{ $message }}</div>
                                 @enderror
                             </div>
@@ -144,71 +134,61 @@
                                 <div class="row">
                                     <div class="col-sm-6 col-md-6">
                                         <div class="form-group">
-                                            <label>Department <span class="text-danger">*</span></label>
-                                            <select class="form-control select" name="patient_department">
-                                                <option value="">Select Department</option>
-                                                <option
-                                                    {{ old('patient_department') == 'Psychiatrists' ? 'selected' : '' }}>
-                                                    Psychiatrists </option>
-                                                <option
-                                                    {{ old('patient_department') == 'Gastroenterology' ? 'selected' : '' }}>
-                                                    Gastroenterology</option>
-                                                <option
-                                                    {{ old('patient_department') == 'Rheumatology' ? 'selected' : '' }}>
-                                                    Rheumatology</option>
-                                                <option {{ old('patient_department') == 'Surgeon' ? 'selected' : '' }}>
-                                                    Surgeon</option>
-                                                <option {{ old('patient_department') == 'Dental' ? 'selected' : '' }}>
-                                                    Dental</option>
-                                                <option {{ old('patient_department') == 'Cardiology' ? 'selected' : '' }}>
-                                                    Cardiology</option>
-                                                <option {{ old('patient_department') == 'Orthopedist' ? 'selected' : '' }}>
-                                                    Orthopedist</option>
-                                                <option {{ old('patient_department') == 'Dermatology' ? 'selected' : '' }}>
-                                                    Dermatology</option>
-                                                <option
-                                                    {{ old('patient_department') == 'Emergency Medicine' ? 'selected' : '' }}>
-                                                    Emergency Medicine</option>
+                                            <label>Role <span class="text-danger">*</span></label>
+                                            <select class="form-control select" name="role">
+                                                <option value="">Select Role</option>
+                                                <option value="1"
+                                                    {{ old('role') == '1' ? 'selected' : '' }}>
+                                                    Administrator </option>
+                                                <option value="2"
+                                                    {{ old('role') == '2' ? 'selected' : '' }}>
+                                                    Management</option>
+                                                <option value="3"
+                                                    {{ old('role') == '3' ? 'selected' : '' }}>
+                                                    Doctor</option>
+                                                <option value="4" {{ old('role') == '4' ? 'selected' : '' }}>
+                                                    Nurse</option>
+                                                <option value="5" {{ old('role') == '5' ? 'selected' : '' }}>
+                                                    Laboratorist</option>
+                                                <option value="6" {{ old('role') == '6' ? 'selected' : '' }}>
+                                                    Pharmacist</option>
+                                                <option value="7" {{ old('role') == '7' ? 'selected' : '' }}>
+                                                    Accountant</option>
+                                                <option value="8" {{ old('role') == '8' ? 'selected' : '' }}>
+                                                    Receptionist</option>
+                                                <option value="9"
+                                                    {{ old('role') == '9' ? 'selected' : '' }}>
+                                                    Patient</option>
                                             </select>
                                         </div>
-                                        @error('patient_department')
+                                        @error('role')
                                             <div class="error">{{ $message }}</div>
                                         @enderror
                                     </div>
                                     <div class="col-sm-6 col-md-6">
                                         <div class="form-group">
                                             <label>Blood Group <span class="text-danger">*</span></label>
-                                            <select class="form-control select" name="patient_blood_group">
+                                            <select class="form-control select" name="blood_group">
                                                 <option value="">Select Blood Group</option>
-                                                <option {{ old('patient_blood_group') == 'A+' ? 'selected' : '' }}>A+
+                                                <option {{ old('blood_group') == 'A+' ? 'selected' : '' }}>A+
                                                 </option>
-                                                <option {{ old('patient_blood_group') == 'A-' ? 'selected' : '' }}>A-
+                                                <option {{ old('blood_group') == 'A-' ? 'selected' : '' }}>A-
                                                 </option>
-                                                <option {{ old('patient_blood_group') == 'B+' ? 'selected' : '' }}>B+
+                                                <option {{ old('blood_group') == 'B+' ? 'selected' : '' }}>B+
                                                 </option>
-                                                <option {{ old('patient_blood_group') == 'B-' ? 'selected' : '' }}>B-
+                                                <option {{ old('blood_group') == 'B-' ? 'selected' : '' }}>B-
                                                 </option>
-                                                <option {{ old('patient_blood_group') == 'O+' ? 'selected' : '' }}>O+
+                                                <option {{ old('blood_group') == 'O+' ? 'selected' : '' }}>O+
                                                 </option>
-                                                <option {{ old('patient_blood_group') == 'O-' ? 'selected' : '' }}>O-
+                                                <option {{ old('blood_group') == 'O-' ? 'selected' : '' }}>O-
                                                 </option>
-                                                <option {{ old('patient_blood_group') == 'AB+' ? 'selected' : '' }}>AB+
+                                                <option {{ old('blood_group') == 'AB+' ? 'selected' : '' }}>AB+
                                                 </option>
-                                                <option {{ old('patient_blood_group') == 'AB-' ? 'selected' : '' }}>AB-
+                                                <option {{ old('blood_group') == 'AB-' ? 'selected' : '' }}>AB-
                                                 </option>
                                             </select>
                                         </div>
-                                        @error('patient_blood_group')
-                                            <div class="error">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-                                    <div class="col-sm-12">
-                                        <div class="form-group">
-                                            <label>Disease/Disorder/Sickness <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" name="patient_disease"
-                                                value="{{ old('patient_disease') }}">
-                                        </div>
-                                        @error('patient_disease')
+                                        @error('blood_group')
                                             <div class="error">{{ $message }}</div>
                                         @enderror
                                     </div>
@@ -220,33 +200,33 @@
                                     <div class="col-sm-12">
                                         <div class="form-group">
                                             <label>Address <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" name="patient_address"
-                                                value="{{ old('patient_address') }}">
+                                            <input type="text" class="form-control" name="address"
+                                                value="{{ old('address') }}">
                                         </div>
-                                        @error('patient_address')
+                                        @error('address')
                                             <div class="error">{{ $message }}</div>
                                         @enderror
                                     </div>
                                     <div class="col-sm-6 col-md-6">
                                         <div class="form-group">
                                             <label>Country/City</label>
-                                            <select class="form-control select" name="patient_city">
+                                            <select class="form-control select" name="city">
                                                 <option value="">Select Option</option>
-                                                <option {{ old('patient_city') == 'Dhaka' ? 'selected' : '' }}>Dhaka
+                                                <option {{ old('city') == 'Dhaka' ? 'selected' : '' }}>Dhaka
                                                 </option>
-                                                <option {{ old('patient_city') == 'Rajshahi' ? 'selected' : '' }}>Rajshahi
+                                                <option {{ old('city') == 'Rajshahi' ? 'selected' : '' }}>Rajshahi
                                                 </option>
-                                                <option {{ old('patient_city') == 'Chattogram' ? 'selected' : '' }}>
+                                                <option {{ old('city') == 'Chattogram' ? 'selected' : '' }}>
                                                     Chattogram</option>
-                                                <option {{ old('patient_city') == 'Khulna' ? 'selected' : '' }}>Khulna
+                                                <option {{ old('city') == 'Khulna' ? 'selected' : '' }}>Khulna
                                                 </option>
-                                                <option {{ old('patient_city') == 'Barishal' ? 'selected' : '' }}>Barishal
+                                                <option {{ old('city') == 'Barishal' ? 'selected' : '' }}>Barishal
                                                 </option>
-                                                <option {{ old('patient_city') == 'Rangpur' ? 'selected' : '' }}>Rangpur
+                                                <option {{ old('city') == 'Rangpur' ? 'selected' : '' }}>Rangpur
                                                 </option>
-                                                <option {{ old('patient_city') == 'Mymensingh' ? 'selected' : '' }}>
+                                                <option {{ old('city') == 'Mymensingh' ? 'selected' : '' }}>
                                                     Mymensingh</option>
-                                                <option {{ old('patient_city') == 'Sylhet' ? 'selected' : '' }}>Sylhet
+                                                <option {{ old('city') == 'Sylhet' ? 'selected' : '' }}>Sylhet
                                                 </option>
                                             </select>
                                         </div>
@@ -254,10 +234,10 @@
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label>Phone <span class="text-danger">*</span></label>
-                                            <input class="form-control" type="text" name="patient_phone"
-                                                value="{{ old('patient_phone') }}">
+                                            <input class="form-control" type="text" name="phone"
+                                                value="{{ old('phone') }}">
                                         </div>
-                                        @error('patient_phone')
+                                        @error('phone')
                                             <div class="error">{{ $message }}</div>
                                         @enderror
                                     </div>
@@ -277,35 +257,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="display-block">Status</label>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="patient_status" id="patient_active"
-                                    value="Urgent: not life threatening" checked
-                                    {{ old('patient_status') == 'Urgent: not life threatening' ? 'checked' : '' }}>
-                                <label class="form-check-label" for="patient_active">
-                                    Urgent: not life threatening
-                                </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="patient_status"
-                                    id="patient_inactive" value="Emergency: could become life threatening"
-                                    {{ old('patient_status') == 'Emergency: could become life threatening' ? 'checked' : '' }}>
-                                <label class="form-check-label" for="patient_inactive">
-                                    Emergency: could become life threatening
-                                </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="patient_status"
-                                    id="patient_inactive" value="Immediate: life threatening"
-                                    {{ old('patient_status') == 'Immediate: life threatening' ? 'checked' : '' }}>
-                                <label class="form-check-label" for="patient_inactive">
-                                    Immediate: life threatening
-                                </label>
-                            </div>
-                        </div>
                         <div class="m-t-20 text-center">
-                            <button class="btn btn-primary submit-btn" type="submit">Create Patient</button>
+                            <button class="btn btn-primary submit-btn" type="submit">Create User</button>
                         </div>
                     </form>
                 </div>

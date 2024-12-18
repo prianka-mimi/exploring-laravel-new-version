@@ -10,11 +10,13 @@
 
 - Blade Templating - HTML template integration in Laravel
 
-- Login with Breeze , Authentication
+- Login with Breeze , Authentication - User
 
-- Patient Add | View 
+- User (With Role) | Patient - Add | View 
 
-- Patient Add with Validation | Username must contain only between A-Z , a-z , 0-9 and without spaces or special characters 
+- User | Patient - Add with Validation | Username must contain only between A-Z , a-z , 0-9 , '-' , '_' and without spaces or special characters
+
+- Roles in Seeder
 
 - Patient Serial Number
 
@@ -50,6 +52,26 @@
 **LogIn**
 
 <img  src="public/ss/admin/login.png"  alt="Hospital Management">
+
+**SignUp**
+
+> Added extra field *Username*
+
+> Default Role *Patient*
+
+<img  src="public/ss/admin/sign-up.png"  alt="Hospital Management">
+
+**Add User**
+
+> Add User with Validation
+
+<img  src="public/ss/admin/add-user.png"  alt="Hospital Management">
+
+**All User**
+
+> All User with Factory and Added User with Toastr Success Message
+
+<img  src="public/ss/admin/all-user.png"  alt="Hospital Management">
 
 **Add Patient**
 

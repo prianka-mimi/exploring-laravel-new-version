@@ -26,7 +26,7 @@
             }
 
             .custom_bg_overlay{
-                padding: 5rem 0;
+                /* padding: 5rem 0; */
                 /* background: rgba(1,1,1,0.7); */
             }
         </style>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Patient;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -41,7 +42,7 @@ class PatientController extends Controller
     {
         $request->validate([
             'patient_first_name'=>'required',
-            'patient_username'=>'required|regex:/^[a-zA-Z0-9]+$/|unique:patients',
+            'patient_username'=>'required|regex:/^[a-zA-Z0-9-_]+$/|unique:patients',
             'patient_email'=>'required|unique:patients',
             'patient_password'=>'required',
             'patient_confirm_password'=>'required|same:patient_password',
@@ -56,7 +57,7 @@ class PatientController extends Controller
         ],[
             'patient_first_name.required'=>'Please enter patient first name',
             'patient_username.required'=>'Please enter patient username',
-            'patient_username.regex'=>'Username must contain only between A-Z , a-z , 0-9 and without spaces or special characters',
+            'patient_username.regex'=>'Username must contain only between A-Z , a-z , 0-9, - , _  and without spaces or special characters',
             'patient_email.required'=>'Please enter patient email',
             'patient_email.unique'=>'This patient email has already been taken',
             'patient_password.required'=>'Please enter patient password',
@@ -95,10 +96,10 @@ class PatientController extends Controller
         ]);
 
         if($request){
-            notyf()->position('x', 'center')->position('y', 'top')->duration(5000)->success('Success ! Patient Added Successfully.');
+            notyf()->position('x', 'center')->position('y', 'top')->duration(10000)->success('Successfully Patient Added');
             return redirect()->route('patients');
         }else{
-            notyf()->position('x', 'center')->position('y', 'top')->duration(10000)->error('Opps ! Somthing Wrong. Please Try Again.');
+            notyf()->position('x', 'center')->position('y', 'top')->duration(15000)->error('Opps ! Somthing Wrong. Please Try Again');
             return redirect()->route('patients-add');
         }
     }

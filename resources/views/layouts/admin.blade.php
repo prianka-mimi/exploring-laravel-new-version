@@ -393,18 +393,18 @@
                         </li>
                         {{-- </li> --}}
                         <li>
-                            <a href="doctors.html"><i class="fa fa-user-md"></i> <span>Doctors</span></a>
+                            <a href="{{ route('user') }}"><i class="fa fa-user"></i> <span>Administrator</span></a>
                         </li>
                         <li>
-                            <a href="{{ route('patients') }}"><i class="fa fa-wheelchair"></i>
-                                <span>Patients</span></a>
+                            <a href="schedule.html"><i class="fa fa-user-md"></i> <span>Doctors &
+                                    Schedule</span></a>
                         </li>
                         <li>
                             <a href="appointments.html"><i class="fa fa-calendar"></i> <span>Appointments</span></a>
                         </li>
                         <li>
-                            <a href="schedule.html"><i class="fa fa-calendar-check-o"></i> <span>Doctor
-                                    Schedule</span></a>
+                            <a href="{{ route('patients') }}"><i class="fa fa-wheelchair"></i>
+                                <span>Patients</span></a>
                         </li>
                         <li>
                             <a href="departments.html"><i class="fa fa-hospital-o"></i> <span>Departments</span></a>
